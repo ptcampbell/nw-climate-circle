@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Work Sans', Arial, Helvetica, sans-serif;
     font-size: 24px;
 	  line-height: 150%;
+    font-weight: 400;
   }
 `
 
