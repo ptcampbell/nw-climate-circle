@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Parallax } from 'react-scroll-parallax'
 import styled from 'styled-components'
 
 export default function Home() {
@@ -11,22 +12,27 @@ export default function Home() {
 				/>
 			</Head>
 			<Main>
+				<Button
+					href="https://forms.gle/D8YYYLMtY1QaVx216"
+					target="_blank"
+				>
+					Reserve place
+				</Button>
 				<Header>
-					<Button href="#">Reserve place</Button>
 					<Intro>
 						The Northwest Climate Circle is a Seattle based
 						therapeutic space where members gather with facilitators
 						to process experiences related to the ecological crises
 						of our time.
 					</Intro>
-					<Circle>
+					<Parallax y={['50%', '-50%']}>
 						<svg
 							viewBox="0 0 100 100"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<circle cx="50" cy="50" r="50" fill="#015054" />
 						</svg>
-					</Circle>
+					</Parallax>
 					<Title>
 						<svg
 							viewBox="0 0 1286 79"
@@ -124,6 +130,44 @@ export default function Home() {
 						</svg>
 					</Title>
 				</Header>
+				<Content>
+					<p>
+						We are already bearing witness to the effects of climate
+						change and as our awareness of this threat grows, we are
+						challenged to find new and adaptive ways of coping and
+						being in our changing world. Processing complex
+						cognitive, behavioral and emotional responses to the
+						climate crisis allows us to engage more fully and
+						effectively with these difficult realities.{' '}
+					</p>
+
+					<p>
+						We believe that eco-anxiety, grief and other
+						dysregulating responses to the climate crisis are
+						greatly exacerbated by feelings of isolation and
+						confusion about what is happening. Many people are
+						concerned about these issues but feel overwhelmed by
+						their scope and complexity, and alone in their
+						experience.{' '}
+					</p>
+
+					<p>
+						The Northwest Climate Circle offers a reflective and
+						supportive space where members gather to process
+						experiences related to the ecological crises of our
+						time. Throughout our 10 weeks together we will focus on
+						building emotional resilience, developing self knowledge
+						and broadening perspectives about our shared reality.{' '}
+					</p>
+
+					<p>
+						This is not an action oriented group - however we affirm
+						those who are contributing in meaningful ways to the
+						issues we care about and we wish to honor the hard work
+						of those in the climate movement.
+					</p>
+				</Content>
+				<Underlay />
 			</Main>
 		</>
 	)
@@ -142,8 +186,10 @@ const Header = styled.div`
 
 const Title = styled.div`
 	position: fixed;
-	bottom: 4rem;
+	bottom: 2rem;
 	width: calc(100% - 4rem);
+	left: 2rem;
+	z-index: 3;
 
 	svg {
 		width: 100%;
@@ -151,18 +197,14 @@ const Title = styled.div`
 	}
 `
 
-const Circle = styled.div`
+const Underlay = styled.div`
 	position: fixed;
-	bottom: -50%;
-	z-index: 0;
-	left: 0px;
 	width: 100%;
-	text-align: center;
-
-	svg {
-		width: 70%;
-		height: auto;
-	}
+	bottom: 0;
+	left: 0;
+	height: 200px;
+	z-index: 2;
+	background: linear-gradient(180deg, rgba(114, 114, 114, 0) 0%, #727272 40%);
 `
 
 const Intro = styled.p`
@@ -176,7 +218,9 @@ const Button = styled.a`
 	top: 2rem;
 	right: 2rem;
 	padding: 0 2rem;
+	z-index: 2;
 	border: 2px solid #fff;
+	background-color: #727272;
 	border-radius: 40px;
 	height: 40px;
 	text-transform: uppercase;
@@ -184,4 +228,10 @@ const Button = styled.a`
 	color: #fff;
 	font-size: 18px;
 	line-height: 40px;
+`
+
+const Content = styled.div`
+	position: relative;
+	z-index: 1;
+	padding-bottom: 200px;
 `

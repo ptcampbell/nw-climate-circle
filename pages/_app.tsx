@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,7 +26,9 @@ export default function App({ Component, pageProps }) {
 		<>
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
-				<Component {...pageProps} />
+				<ParallaxProvider>
+					<Component {...pageProps} />
+				</ParallaxProvider>
 			</ThemeProvider>
 		</>
 	)
