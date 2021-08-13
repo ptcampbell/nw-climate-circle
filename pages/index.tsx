@@ -166,6 +166,10 @@ export default function Home() {
 						issues we care about and we wish to honor the hard work
 						of those in the climate movement.
 					</p>
+					<p>
+						Sessions take place in Seattle on Thursdays 7 &mdash;
+						9pm between 9/30 and 12/16.
+					</p>
 				</Content>
 				<Underlay />
 			</Main>
@@ -179,7 +183,7 @@ const Main = styled.main`
 `
 
 const Header = styled.div`
-	height: 100vh;
+	height: 90vh;
 	width: 100%;
 	position: relative;
 `
