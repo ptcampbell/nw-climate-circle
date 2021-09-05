@@ -170,6 +170,14 @@ export default function Home() {
 						Sessions take place in Seattle on Thursdays 7 &mdash;
 						9pm between 9/30 and 12/16.
 					</p>
+					<div className="Foot">
+						<a href="https://forms.gle/D8YYYLMtY1QaVx216">
+							Reserve a place
+						</a>
+						<a href="mailto:northwestclimatecircle@gmail.com">
+							Email Northwest Climate Circle
+						</a>
+					</div>
 				</Content>
 				<Underlay />
 			</Main>
@@ -238,4 +246,28 @@ const Content = styled.div`
 	position: relative;
 	z-index: 1;
 	padding-bottom: 200px;
+
+	.Foot {
+		display: flex;
+		padding-top: 2rem;
+		text-transform: uppercase;
+
+		a {
+			color: #015054;
+			padding: 0 2rem;
+			border: 2px solid #fff;
+			background-color: #fff;
+			border-radius: 40px;
+			height: 40px;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 18px;
+			line-height: 40px;
+			margin-right: 1rem;
+		}
+		p {
+			margin: 0;
+			padding-right: 1rem;
+		}
+	}
 `
